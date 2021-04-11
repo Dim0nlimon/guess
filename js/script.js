@@ -1,5 +1,7 @@
 'use strict';
 
+let numberToGuess = Math.floor(Math.random() * 100) + 1;
+
 function guess() {
   let userNumber = prompt('Угадай число от 1 до 100');
   if (userNumber === null) {
@@ -7,10 +9,10 @@ function guess() {
     return;
   }
 
-  let numberToGuess = 67;
+
   userNumber = +userNumber;
-  if (isNaN(userNumber)) {
-    alert('Введи число!');
+  if (isNaN(userNumber) || userNumber !== Math.round(userNumber)) {
+    alert('Введи целое число!');
     return guess();
   }
 
